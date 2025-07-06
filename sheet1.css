@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #8f8fd9, #5fa8a7, #185a9d);
+  background-size: 300% 300%;
+  animation: gradient-move 10s ease-in-out infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.calculator {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: calc-fade-in 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: scale(0.95);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes calc-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.display {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: right;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  min-height: 60px;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.07);
+}
+
+button:active {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #764ba2;
+  transform: scale(0.96);
+}
